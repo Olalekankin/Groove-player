@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Css  -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Material Icon  -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <title>Groove Music</title>
+</head>
+<body>
+    <div class="container">
+        <aside>
+            
+                <div class="aside-icons">
+                    <div class="icons" onclick="backBtn()">
+                        <span class="material-symbols-outlined">
+                        keyboard_backspace
+                        </span>
+                    </div>
+                    <div class="icons" onclick="menuBar()">
+                        <span class="material-symbols-outlined">
+                        menu
+                        </span>
+                    </div>
+                    <div class="icons" onclick="searchBtn()">
+                        <span class="material-symbols-outlined">
+                        search
+                        </span>
+                    </div>
+                    <div class="icons" onclick="musicBtn()">
+                        <span class="material-symbols-outlined">
+                        music_note
+                        </span>
+                    </div>
+                    <div class="icons" onclick="recent()">
+                        <span class="material-symbols-outlined">
+                        schedule
+                        </span> 
+                    </div>
+                    <div class="icons" onclick="nowPlaying()">
+                        <span class="material-symbols-outlined">
+                        equalizer
+                        </span>
+                    </div>
+                    <div class="icons" onclick="playList()">
+                        <span class="material-symbols-outlined">
+                        playlist_play
+                        </span>
+                    </div>
+                    <div class="icons" onclick="plusBtn()">
+                        <span class="material-symbols-outlined">
+                        add
+                        </span>
+                    </div>
+                    <div class="icons person" onclick="signIn()">
+                        <span class="material-symbols-outlined">
+                            person_add
+                        </span>
+                    </div>
+                    <div class="icons" onclick="SettingBtn()">
+                        <span class="material-symbols-outlined">
+                            settings
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="aside-details">
+                    <div class="details">
+                        <h6>Groove Music</h6>
+                    </div>
+                    
+                    <div class="details extra">
+                        
+                        <div class="flex-details">
+                            <span class="material-symbols-outlined">
+                                search
+                                </span>
+                            <input type="text" placeholder="Search">
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="details">
+                        <h4>My Music</h4>
+                    </div>
+                    <div class="details">
+                        <h4>Recent plays</h4>
+                    </div>
+                    <div class="details">
+                        <h4>Now playing</h4>
+                    </div>
+        
+                    <div class="details">
+                        <div class="flex-details">
+                            <h4>Playlists</h4>
+                            <span class="material-symbols-outlined">
+                                add
+                            </span>
+                        </div>
+                    </div>
+                    <div class="details personer"> 
+                        <div class="flex-details">
+                            <h4>sign in</h4>
+                            <span class="material-symbols-outlined">
+                                settings
+                            </span>
+                        </div>
+                    </div>
+                
+                </div>
+           
+        </aside>
+
+        <!-- My music section -->
+        <section class="mymusic">
+            <div class="section-title">
+                <h2>My music</h2>
+            </div>
+
+            <div class="section-inner">
+                <div class="category-label">
+                    <label for="song" onclick="songList()">Songs</label>
+                    <label for="artist" onclick="artistList()">Artists</label>
+                    <label for="Album" onclick="albumList()">Albums</label>
+                </div>
+
+                <div class="sort">
+                    <label for="">Sort by:
+                        <select name="sort" id="sortList">
+                            <option value="Date added"> Date added</option>
+                            <option value="A-Z"> A-Z</option>
+                            <option value="Artist">Artist</option>
+                            <option value="Album"> Album</option>
+                        </select>
+                    </label>
+                    <label for="">Genre:
+                        <select name="sort" id="genre">
+                            <option value="Date added">All genres</option>
+                        </select>
+                    </label>
+
+                </div>
+                <div class="category-content-wrap">
+                    <div class="song">
+                        
+                    </div>
+                    <div class="artist">
+
+                    </div>
+                    <div class="album">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="recent-plays">
+            <div class="section-title">
+                <h2>Recent plays</h2>
+            </div>
+            <div class="shuffle-recent">
+                <i class="fa-solid fa-shuffle"></i>
+                <small>Shuffle all music</small>
+            </div>
+            <div class="initial-hint">
+                <h3>
+                    Things you listen to will show up here
+                </h3>
+            </div>
+            <div class="upload">
+                <i class="fa-solid fa-album"></i>
+                <input type="file" name="music" id="" placeholder="Show my music">
+            </div>
+            <div class="recentplaylist">
+
+            </div>
+        </section>
+
+
+        <div class="mini-player">
+            <div class="mini-player-container">
+                <div class="media-control">
+                    <button class="ShuffleBtn">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </button>
+                    <button class="prevBtn">
+                        <i class="fa-solid fa-backward-step"></i>
+                    </button>
+                    <button class="playPauseBtn">
+                        <span class="material-symbols-outlined">
+                            play_arrow
+                        </span>
+                    <button class="nextBtn">
+                        <i class="fa-solid fa-forward-step"></i>
+                    </button>
+                    <button class="refreshBtn">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </button>
+                </div>
+                <div class="media-option">
+                    <button class="volume">
+                        <i class="fa-solid fa-volume-high"></i>
+                    </button>
+                    <input type="range" min="0" max="100">
+                    <button class="cassette">
+                        <i class="fa-solid fa-cassette-tape"></i>
+                    </button>
+                    <button class="options">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
